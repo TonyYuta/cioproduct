@@ -140,7 +140,7 @@ public class HomePageTest {
 		driver.get(homePageUrl);
 	}
 	
-	@Test(enabled = true, groups = {"setup", "regression", "all"})
+	@Test(enabled = false, groups = {"setup", "regression", "all"})
 	public void testSetUp02() {
 		System.setProperty("webdriver.gecko.driver","/Library/geckodriver");
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
@@ -150,11 +150,11 @@ public class HomePageTest {
 		driver.get(homePageUrl);
 	}	
 	
-	@Test(enabled = false, groups = {"setup", "regression", "all"})
+	@Test(enabled = true, groups = {"setup", "regression", "all"})
 	public void testSetUp03() {
-		System.setProperty("webdriver.gecko.driver","geckodriver");
-	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
-	    capabilities.setCapability("marionette", true);
+		//System.setProperty("webdriver.gecko.driver","geckodriver");
+	    //DesiredCapabilities capabilities=DesiredCapabilities.firefox();
+	    //capabilities.setCapability("marionette", true);
 	    WebDriver driver = new FirefoxDriver();
 	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		driver.get(homePageUrl);
