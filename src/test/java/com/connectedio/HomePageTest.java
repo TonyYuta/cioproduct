@@ -112,7 +112,7 @@ public class HomePageTest {
 	}
 	
 */	
-	@Test(enabled = false, groups = {"driver", "regression", "all"}, priority = 0)
+	@Test(enabled = false, groups = {"browser", "regression", "all"}, priority = 0)
 	public void testDriver() {
 		Assert.assertEquals(driver, driver);
 	}
@@ -131,7 +131,7 @@ public class HomePageTest {
 		
 	}
 	
-	@Test(enabled = false, groups = {"setup", "regression", "all"})
+	@Test(enabled = false, groups = {"browser", "regression", "all"})
 	public void testSetUp01() {
 		System.setProperty("webdriver.gecko.driver","/Users/Yutaka/Downloads/geckodriver");
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
@@ -141,7 +141,7 @@ public class HomePageTest {
 		driver.get(homePageUrl);
 	}
 	
-	@Test(enabled = false, groups = {"setup", "regression", "all"})
+	@Test(enabled = false, groups = {"browser", "regression", "all"})
 	public void testSetUp02() {
 		System.setProperty("webdriver.gecko.driver","/Library/geckodriver");
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
@@ -151,7 +151,7 @@ public class HomePageTest {
 		driver.get(homePageUrl);
 	}	
 	
-	@Test(enabled = false, groups = {"setup", "regression", "all"})
+	@Test(enabled = false, groups = {"browser", "regression", "all"})
 	public void testSetUp03() {
 		//System.setProperty("webdriver.gecko.driver","geckodriver");
 	    //DesiredCapabilities capabilities=DesiredCapabilities.firefox();
@@ -176,7 +176,7 @@ public class HomePageTest {
 	
 	}
   
-	@Test(enabled = true, groups = {"setup", "all", "regression"}, priority = 0)
+	@Test(enabled = false, groups = {"browser", "all", "regression"}, priority = 0)
 	public void setUpFirefoxDriver01() {
 		System.setProperty("webdriver.gecko.driver","/Library/geckodriver");
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
@@ -188,7 +188,7 @@ public class HomePageTest {
 
 	}
 	
-	@Test(enabled = true, groups = {"setup", "all", "regression"}, priority = 0)
+	@Test(enabled = false, groups = {"browser", "all", "regression"}, priority = 0)
 	public void setUpFirefoxDriver02() {
 		System.setProperty("webdriver.gecko.driver","/Users/Yutaka/Downloads/geckodriver");
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
@@ -206,7 +206,7 @@ public class HomePageTest {
 
 	}
 	
-	@Test(enabled = true, groups = {"setup", "all", "regression"}, priority = 0)
+	@Test(enabled = false, groups = {"browser", "all", "regression"}, priority = 0)
 	public void setUpFirefoxDriver03() {
 		System.setProperty("webdriver.gecko.driver","/Library/geckodriver");
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
@@ -214,6 +214,18 @@ public class HomePageTest {
 	    WebDriver driver = new FirefoxDriver();
 	//    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 //	    driver.navigate().to("https://www.yahoo.com/");
+		driver.get(homePageUrl);
+
+	}
+	
+	@Test(enabled = true, groups = {"browser", "all", "regression"}, priority = 0)
+	public void setUpFirefoxDriver04() {
+		System.setProperty("webdriver.gecko.driver","/Library/geckodriver");
+	    DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+	    capabilities.setCapability("marionette", true);
+	    WebDriver driver = new FirefoxDriver(capabilities);
+	   // driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+//	    driver.navigate().to("http://www.google.com");
 		driver.get(homePageUrl);
 
 	}
