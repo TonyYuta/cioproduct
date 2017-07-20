@@ -182,24 +182,28 @@ public class HomePageTest {
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
 	    capabilities.setCapability("marionette", true);
 	    WebDriver driver = new FirefoxDriver(capabilities);
-	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-	    driver.navigate().to("http://www.google.com");
+	   // driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+//	    driver.navigate().to("http://www.google.com");
+		driver.get(homePageUrl);
+
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = true, groups = {"setup", "all", "regression"}, priority = 0)
 	public void setUpFirefoxDriver02() {
 		System.setProperty("webdriver.gecko.driver","/Users/Yutaka/Downloads/geckodriver");
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
 	    capabilities.setCapability("marionette", true);
 	    WebDriver driver = new FirefoxDriver(capabilities);
-	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+	//    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	    try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    driver.navigate().to("http://www.google.com");
+//	    driver.navigate().to("http://www.google.com");
+		driver.get(homePageUrl);
+
 	}
 	
 	@Test(enabled = true, groups = {"setup", "all", "regression"}, priority = 0)
@@ -208,8 +212,10 @@ public class HomePageTest {
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
 	    capabilities.setCapability("marionette", true);
 	    WebDriver driver = new FirefoxDriver();
-	    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-	    driver.navigate().to("https://www.yahoo.com/");
+	//    driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+//	    driver.navigate().to("https://www.yahoo.com/");
+		driver.get(homePageUrl);
+
 	}
 	
 	
