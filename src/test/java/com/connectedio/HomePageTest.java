@@ -201,7 +201,7 @@ public class HomePageTest {
 	    driver.navigate().to("http://www.google.com");
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = true, groups = {"setup", "all", "regression"}, priority = 0)
 	public void setUpFirefoxDriver03() {
 		System.setProperty("webdriver.gecko.driver","/Library/geckodriver");
 	    DesiredCapabilities capabilities=DesiredCapabilities.firefox();
