@@ -230,7 +230,7 @@ public class HomePageTest {
 
 	}
 	
-	@Test(enabled = true, groups = {"browser", "all", "regression"}, priority = 0)
+	@Test(enabled = false, groups = {"browser", "all", "regression"}, priority = 0)
 	public void setUpFirefoxDriver05() {
 		System.setProperty("webdriver.gecko.driver","geckodriver");
 	    DesiredCapabilities capabilities = DesiredCapabilities.firefox();
@@ -242,5 +242,15 @@ public class HomePageTest {
 
 	}
 	
+	@Test(enabled = true, groups = {"browser", "all", "regression"}, priority = 0)
+	public void setUpFirefoxDriver06() {
+		System.setProperty("webdriver.gecko.driver","geckodriver");
+	    DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+	    capabilities.setCapability("marionette", true);
+	    WebDriver driver = new FirefoxDriver(capabilities);
+	   // driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+//	    driver.navigate().to("http://www.google.com");
+		driver.get(homePageUrl);
+	}
 	
 }
